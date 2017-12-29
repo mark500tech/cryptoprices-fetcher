@@ -1,5 +1,10 @@
-import {FETCH_DATA} from "./constants";
+import {FETCH_DATA_PENDING, FETCH_DATA_SUCCESS} from "./constants";
 
-export const fetchData = () => ({
-  type: FETCH_DATA
+export const fetchDataPending = () => ({
+  type: FETCH_DATA_PENDING
+});
+
+export const fetchDataSuccess = (data) => ({
+  type: FETCH_DATA_SUCCESS,
+  payload: data
 });

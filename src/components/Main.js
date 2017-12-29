@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {fetchData} from "../actions/dataAction";
+import {fetchDataPending} from "../actions/dataAction";
 
 class Main extends React.Component {
   componentWillMount() {
@@ -9,18 +9,26 @@ class Main extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
+
     return (
       <div>
-        Helloo!
+        { data &&
+          data.map((item, index) => (
+            <li key={ index }>
+              { `From: ${item.from} To: ${item.to} Price: ${item.send}` }
+            </li>
+          ))
+        }
       </div>
     )
   }
 }
 
 const mapStateToProps = ({data}) => ({
-  data
+  data: data.exchangeItems
 });
 
 export default connect(mapStateToProps, {
-  fetchData
+  fetchData: fetchDataPending
 })(Main);

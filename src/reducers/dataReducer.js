@@ -1,13 +1,13 @@
-import {FETCH_DATA} from "../actions/constants";
+import {FETCH_DATA_SUCCESS} from "../actions/constants";
 
 const initialState = {};
 
 export const dataReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_DATA:
+    case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        result: 'Some data from API'
+        exchangeItems: action.payload
       };
 
     default:

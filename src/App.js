@@ -7,11 +7,12 @@ import {createLogger} from 'redux-logger';
 import {rootReducer} from "./reducers/rootReducer";
 
 import Main from "./components/Main";
+import {dataMiddleware} from "./middlewares/dataMiddleware";
 
 const logger = createLogger();
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk, promise, logger)
+  applyMiddleware(dataMiddleware, thunk, promise, logger)
 );
 
 class App extends React.Component {
