@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {fetchDataPending} from "../actions/dataAction";
+import Card from "./common/card";
 
 class Main extends React.Component {
   componentWillMount() {
@@ -13,13 +14,23 @@ class Main extends React.Component {
 
     return (
       <div>
-        { data &&
-          data.map((item, index) => (
-            <li key={ index }>
-              { `From: ${item.from} To: ${item.to} Price: ${item.send}` }
-            </li>
-          ))
-        }
+        {/*{ data &&*/}
+        {/*data.map((item, index) => (*/}
+          {/*<li key={ index }>*/}
+            {/*{ `First exchange: ${item.firstStep.exchange}` }*/}
+            {/*{ `Second exchange: ${item.secondStep.exchange}` }*/}
+          {/*</li>*/}
+        {/*))*/}
+        {/*}*/}
+
+        <Card>
+          <div>
+            313123
+          </div>
+          <div>
+            Mark!
+          </div>
+        </Card>
       </div>
     )
   }
